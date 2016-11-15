@@ -47,4 +47,4 @@ CREATE TABLE IF NOT EXISTS `msg`
 	`msg_type` 			VARCHAR(20) NOT NULL,
 	`msg_text`	 		TEXT 		NOT NULL,
 	PRIMARY KEY (msg_ID)
-);
+) AUTO_INCREMENT=1;
