@@ -1,4 +1,5 @@
-
+@media (min-width: 768px) {
   .navbar-fixed-top {
       height: 75px; /* Whatever you want. */
   }
+}
