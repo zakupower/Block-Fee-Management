@@ -41,7 +41,7 @@ CREATE TABLE appartament
 CREATE TABLE msg -- za nqkvi sabraniq i etc da se poqvqva nai otgore na raotite
 (
   msg_ID 		INT 		NOT NULL AUTO_INCREMENT,   
-  msg_type 		VARCHAR(20) NOT NULL,
+  msg_type 		VARCHAR(20) NULL,
   msg_text 		TEXT 		NOT NULL,
   PRIMARY KEY (msg_ID)
 );
