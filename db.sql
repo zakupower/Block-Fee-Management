@@ -1,14 +1,14 @@
 CREATE DATABASE db_block;
 CREATE TABLE users
 (
-	users_ID 			INT 			NOT NULL AUTO_INCREMENT,
+	users_ID			INT				NOT NULL AUTO_INCREMENT,
 	users_username 		VARCHAR(50) 	NOT NULL,
-	users_password 		CHAR(50) 		NOT NULL,
+	users_password 		VARCHAR(50) 	NOT NULL,
 	users_email 		VARCHAR(50) 	NOT NULL,
 	users_first_name 	VARCHAR(50) 	NOT NULL,
 	users_last_name 	VARCHAR(50) 	NOT NULL,
 	users_adress 		VARCHAR(100) 	NOT NULL,
-	users_premissions 	INT 			NOT NULL, -- 1- User / 2- Domoupravitel / 3- Admin
+	users_premissions 	INT 			NOT NULL, 
 	users_etaj 			INT 			NOT NULL,
 	users_apartament 	INT 			NOT NULL,
 	users_tel_nomer		VARCHAR(20)		NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE vhod
 	vhod_taska_chistachka 	DECIMAL 	NULL,
 	vhod_taksa_dop 			DECIMAL 	NULL,
 	vhod_pari 				DECIMAL 	NULL,
-	vhod_taska_elec 		DECIMAL 	NULL -- elektrichestvo
+	vhod_taska_elec 		DECIMAL 	NULL 
 );
 
 CREATE TABLE appartament
@@ -36,12 +36,12 @@ CREATE TABLE appartament
 	app_nachDataPolzvane 			DATE 	NOT NULL,
 	app_vreme_na_nepolzvane_START 	DATE 	NULL,
 	app_vreme_na_nepolzvane_END 	DATE 	NULL,
-	app_dr_info						TEXT 	NULL,
+	app_other_info					TEXT 	NULL
 	
 	PRIMARY KEY (app_ID)
 );
 
-CREATE TABLE msg -- za nqkvi sabraniq i etc da se poqvqva nai otgore na raotite
+CREATE TABLE msg 
 (
 	msg_ID 			INT 		NOT NULL AUTO_INCREMENT,   
 	msg_type 		VARCHAR(20) NOT NULL,
