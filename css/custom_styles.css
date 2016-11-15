@@ -3,3 +3,19 @@
       height: 75px; /* Whatever you want. */
   }
 }
+body {
+background-color:#90AFC5;/*BACKGROUND*/
+
+}
+
+#jumb {
+  padding-top: 100px;
+  padding-bot: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color:#336B87;/*FOREGROUND*/
+}
+#navbarcol {
+  background-color:#2A3132; /*NAVIGATION BAR*/
+  color:#FFFFFF;
+}
