@@ -1,6 +1,7 @@
 <?php
 /* da ne zabravim chmod 644 na config.php */
 require ("config.php");
+<<<<<<< HEAD
 
 class Database {
 
@@ -19,5 +20,13 @@ class Database {
       }
       return $this->conn;
     }
+=======
+public class DatabaseConnect {
+  function __construct()
+  {
+      mysql_connect(DB_HOSTNAME,DB_USERNAME,DB_PASSWORD) or die('Could not connect to MySQL/MariaDB server.');
+      mysql_select_db(DB_DATABASE);
+  }
+>>>>>>> parent of bf319e6... hevy shit
 }
 ?>
