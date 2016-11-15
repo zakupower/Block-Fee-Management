@@ -61,14 +61,14 @@ class USER
         }
 
         public function doLogin($user_username,$user_email,$user_password) {
-			
+
 		try {
 			$stmt = $this->conn->prepare("SELECT users_ID, users_username, users_email, users_password FROM users WHERE users_username=:user_username OR users_email=:user_email");
 			$stmt->execute(array(':user_username'=>$user_username, ':user_email'=>$user_email));
 			$userRow = $stmt->fetch(PDO::FETCH_ASSOC);
-			
+
 			if($stmt->rowCount() == 1) {
-				
+
 				if(password_verify($user_password, $userRow['users_password'])) {
 					$_SESSION['user_session'] = $userRow['users_ID'];
 					echo "saksses";
@@ -91,9 +91,6 @@ class USER
 
 }
 
-$asd = new USER();
-$asd->register("a","a","a","a","a","a",1,1,1,1);
-$asd->doLogin("a","a","a");
 
 
 ?>
