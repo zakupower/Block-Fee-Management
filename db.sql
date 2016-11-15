@@ -1,5 +1,5 @@
 CREATE DATABASE db_block;
-CREATE TABLE user
+CREATE TABLE users
 (
 	users_ID			INT				NOT NULL AUTO_INCREMENT,
 	users_username 		VARCHAR(50) 	NOT NULL,
