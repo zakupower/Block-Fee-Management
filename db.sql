@@ -36,7 +36,7 @@ CREATE TABLE appartament
 	app_nachDataPolzvane 			DATE 	NOT NULL,
 	app_vreme_na_nepolzvane_START 	DATE 	NULL,
 	app_vreme_na_nepolzvane_END 	DATE 	NULL,
-	app_other_info					TEXT 	NULL,
+	app_dr_info						TEXT 	NULL,
 	
 	PRIMARY KEY (app_ID)
 );
