@@ -1,6 +1,6 @@
-/* MySQL/MariaDB Settings */
-
 <?php
+
+/* MySQL/MariaDB Settings */
 define (DB_USERNAME, "mysql_username");
 define (DB_PASSWORD, "mysql_password");
 define (DB_DATABASE, "database_name");
