@@ -7,6 +7,7 @@ CREATE TABLE users
   email VARCHAR(50) NOT NULL,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
+  pet INT NOT NULL, -- 0 - nqma 1- ima 
   premissions INT NOT NULL -- 1- User / 2- Domoupravitel / 3- Admin
 );
 
