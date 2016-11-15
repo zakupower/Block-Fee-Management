@@ -6,7 +6,6 @@ class Database {
 
     public $conn = null;
 
-
     public function connect()
     {
       try

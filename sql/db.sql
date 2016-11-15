@@ -1,4 +1,5 @@
-CREATE DATABASE db_block;
+--CREATE DATABASE `db_block`;
+
 CREATE TABLE IF NOT EXISTS `users`
 (
 	`users_ID`				INT				NOT NULL AUTO_INCREMENT,

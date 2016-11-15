@@ -1,8 +1,9 @@
 <?php
-
 /* MySQL/MariaDB Settings */
-define (DB_USERNAME, "mysql_username");
-define (DB_PASSWORD, "mysql_password");
-define (DB_DATABASE, "database_name");
+
+
+define (DB_USERNAME, "root");
+define (DB_PASSWORD, "");
+define (DB_DATABASE, "db_block_fee_management");
 define (DB_HOSTNAME, "localhost");
 ?>
