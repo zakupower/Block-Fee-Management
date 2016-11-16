@@ -1,21 +1,36 @@
-@media (min-width: 768px) {
-  .navbar-fixed-top {
-      height: 75px; /* Whatever you want. */
-  }
+
+html {
+  position: relative;
+  min-height: 100%;
 }
 body {
-background-color:#90AFC5;/*BACKGROUND*/
-
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 125px;
+  /* Set the fixed height of the footer here */
+  background-color: #0078ff;
 }
 
-#jumb {
-  padding-top: 100px;
-  padding-bot: 100px;
-  padding-left: 50px;
-  padding-right: 50px;
-  background-color:#336B87;/*FOREGROUND*/
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
 }
-#navbarcol {
-  background-color:#2A3132; /*NAVIGATION BAR*/
-  color:#FFFFFF;
+.container .text-muted {
+  margin: 20px 0;
+}
+
+#jumbo {
+  padding: 50px;
+  padding-top: 20px;
 }
