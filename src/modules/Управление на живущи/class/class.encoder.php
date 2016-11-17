@@ -40,9 +40,9 @@ class Encoder
     }
 }
 
-/*
+
 $encoder = new Encoder();
 $code = $encoder->encode("0107");
 echo $encoder->searchIfExist("localhost","apps","root","",$code);
-*/
+
 ?>
