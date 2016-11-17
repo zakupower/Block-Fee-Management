@@ -1,26 +1,16 @@
 <?php
-
-//config file
-//require_once "connection.php"
-define (DB_USERNAME, "root");
-define (DB_PASSWORD, "");
-define (DB_DATABASE, "apps");
-define (DB_HOSTNAME, "localhost");
-
 class Encoder
 {
     public $conn = null;
 
-
     public function encode($str) {
-
-        //generatora na kod
         $code = strtoupper(substr(md5($str),-6));
-
-        //edit teq sus tva ot connection.php dannite
+        return $code;
+    }
+    public function searchIfExist($DB_HOSTNAME,$DB_DATABASE,$DB_USERNAME,$DB_PASSWORD,$code) {
         try {
             //db
-            $this->conn = new PDO("mysql:host=".DB_HOSTNAME.";dbname=".DB_DATABASE."",DB_USERNAME,DB_PASSWORD);
+            $this->conn = new PDO("mysql:host=".$DB_HOSTNAME.";dbname=".$DB_DATABASE."",$DB_USERNAME,$DB_PASSWORD);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             //search query-to
@@ -36,11 +26,13 @@ class Encoder
                 }
             }
             if($arr == $code) {
-                echo "Kodat e veche generiran generirai otnovo";
+                return "Exist";
             }
             else {
-                echo $code;
+                return $code;
             }
+
+
         }
         catch (PDOException $e) {
             return $e->getMessage();
@@ -48,7 +40,9 @@ class Encoder
     }
 }
 
+/*
 $encoder = new Encoder();
-$encoder->encode("0108");
-
+$code = $encoder->encode("0107");
+echo $encoder->searchIfExist("localhost","apps","root","",$code);
+*/
 ?>

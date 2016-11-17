@@ -18,6 +18,51 @@
     <![endif]-->
   </head>
   <body>
+      <!-- Modal za app_search-->
+      <div id="searchApp" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Търси апартамент.</h4>
+            </div>
+            <!-- Body of content in the modal-->
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Етаж:</label>
+                <select class="form-control" id="app_etaj">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Апартамент:</label>
+                <select class="form-control" id="app_number">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Уникален Номер:</label>
+                <input class="form-control" id="app_unique_id">
+              </div>
+
+               <!-- END Body of content in the modal-->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Търси</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+            </div>
+          </div>
+        </div>
+      </div>
+       <!-- Modal za app_search END-->
     <!-- Modal za app_add-->
     <div id="addApp" class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -138,102 +183,169 @@
         </div>
       </div>
     </div>
-     <!-- END modal za app_edit-->
-    <div class="container">
-        <h2>Справки на апартаменти</h2>
 
+    <!-- Modal za etaj_edit-->
+    <div id="edit_etaj_1" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Редактирай етаж.</h4>
+          </div>
+          <!-- Body of content in the modal-->
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Апартаменти:</label>
+              <input type="number" class="form-control" id="etaj_number_apps">
+            </div>
+            <div class="form-group">
+              <label>Допълнителна информация</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+             <!-- END Body of content in the modal-->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Запази</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Изтрий</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- END modal za app_edit-->
+
+    <div class="container">
+        <h2>Справки на апартаменти и етажи</h2>
+        <hr>
         <div class="row">
             <div class="col-md-2">
-                <p><a href="#"><i class="fa fa-plus fa-lg" aria-hidden="true"></i><a href="" data-toggle="modal" data-target="#addApp"> Добави Апартамент</a></p>
+                <p><i class="fa fa-plus fa-lg"  style="padding-right:15px;" aria-hidden="true"></i><a href="" data-toggle="modal" data-target="#addApp">Добави Апартамент</a></p>
             </div>
             <div class="col-md-2">
-                <p><a href="#"><i class="fa fa-search fa-lg" aria-hidden="true"></i><a href="" data-toggle="modal" data-target="#addApp"> Търсене</a></p>
+                <p><i class="fa fa-search fa-lg" style="padding-right:10px;" aria-hidden="true"></i><a href="" data-toggle="modal" data-target="#searchApp"> Търсене</a></p>
+            </div>
+            <div class="col-md-2">
+                <p><i class="fa fa-bar-chart-o fa-lg" style="padding-right:15px;" aria-hidden="true"></i><a href="" data-toggle="modal" data-target="#searchApp"> Статистики</a></p>
+            </div>
+            <div class="pull-right" style="margin-right:20px;">
+                <p>Пари на входа: <b>1300</b> лв.</p>
             </div>
         </div>
 
         <hr>
 
 
-        <div class="row list-group">
-          <!-- app norm start -->
-            <div class="col-md-4">
+        <div class="row">
+          <!-- etaj norm start -->
+            <div class="col-md-12">
                 <div class = "panel panel-primary">
                   <div class = "panel-heading">
-                    <a data-toggle="collapse" href="#collapse1" style="color:#fff;">
+                    <a data-toggle="collapse" href="#etaj_1_collapse" style="color:#fff;">
                     <h3 class="panel-title">
-                        <i class="fa fa-home fa-lg" aria-hidden="true"></i> Етаж: <b>1</b>  Апартамент: <b>1</b></a>
+                        <i class="fa fa-home fa-lg" aria-hidden="true"></i> Етаж: <b>1</b></a>
                         <div class="pull-right"><p class="text-right">
-                            <a href="#" data-toggle="modal" data-target="#editApp" style="color:#fff;">Редактирай</a>
+                            <a href="#" data-toggle="modal" data-target="#edit_etaj_1" style="color:#fff;">Редактирай</a>
                         </div>
                     </h3>
                   </div>
-                  <div id="collapse1" class="panel-collapse collapse">
-
+                  <div id="etaj_1_collapse" class="panel-collapse collapse">
                     <div class = "panel-body">
+                        <div class="form-group">
+
+                        <div class="row">
+                        <!--appartament -->
+
+                            <div class="col-md-6">
+                            <div class = "panel panel-primary">
+                              <div class = "panel-heading">
+                                <a data-toggle="collapse" href="#etaj_1_app_1_collapse" style="color:#fff;">
+                                <h3 class="panel-title">
+                                    <i class="fa fa-home fa-lg" aria-hidden="true"></i> Апартамент: <b>1</b></a>
+                                    <div class="pull-right"><p class="text-right">
+                                        <a href="#" data-toggle="modal" data-target="#editApp" style="color:#fff;">Редактирай</a>
+                                    </div>
+                                </h3>
+                              </div>
+                              <div id="etaj_1_app_1_collapse" class="panel-collapse collapse">
+
+                                <div class = "panel-body">
+                                    <div class="form-group">
+                                        <p>Живущи: <b> 3 </b></p>
+                                        <p>Начална дата на ползване на апартамента: <b> 11/11/2013</b> </p>
+                                        <p>Начална дата на не ползване ОТ: <b> - </b> </p>
+                                        <p>Начална дата на не ползване ДО: <b> - </b> </p>
+                                        <p>Допълнителна информация: <i>няма</i></p>
+                                    </div>
+
+                                </div>
+
+                                <div class="panel-footer">
+                                  <h4>Такса: <b>10</b> лв.
+                                      <div class="pull-right">
+                                          Уникален код: <b> 1EB328 </b>
+                                      </div>
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--appartament END -->
+                         <!--appartament -->
+                          <div class="col-md-6">
+                          <div class = "panel panel-primary">
+                            <div class = "panel-heading">
+                              <a data-toggle="collapse" href="#etaj_1_app_2_collapse" style="color:#fff;">
+                              <h3 class="panel-title">
+                                  <i class="fa fa-home fa-lg" aria-hidden="true"></i> Апартамент: <b>2</b></a>
+                                  <div class="pull-right"><p class="text-right">
+                                      <a href="#" data-toggle="modal" data-target="#editApp" style="color:#fff;">Редактирай</a>
+                                  </div>
+                              </h3>
+                            </div>
+                            <div id="etaj_1_app_2_collapse" class="panel-collapse collapse">
+
+                              <div class = "panel-body">
+                                  <div class="form-group">
+                                      <p>Живущи: <b> 3 </b></p>
+                                      <p>Начална дата на ползване на апартамента: <b> 11/11/2013</b> </p>
+                                      <p>Начална дата на не ползване ОТ: <b> - </b> </p>
+                                      <p>Начална дата на не ползване ДО: <b> - </b> </p>
+                                      <p>Допълнителна информация: <i>няма</i></p>
+                                  </div>
+
+                              </div>
+
+                              <div class="panel-footer">
+                                <h4>Такса: <b>10</b> лв.
+                                    <div class="pull-right">
+                                        Уникален код: <b> 1EB328 </b>
+                                    </div>
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--appartament END -->
+                        </div>
+
+
 
                     </div>
 
                     <div class="panel-footer">
-                      <h4>Такса: <b>20</b> лв.</h4>
+                      <h4>Обща такса: <b>80</b> лв.</h4>
                     </div>
                   </div>
                 </div>
             </div>
-        <!-- app norm END -->
-
-        <!-- app zakusnql -->
-        <div class="item col-md-4">
-            <div class = "panel panel-warning">
-              <div class = "panel-heading">
-                <a data-toggle="collapse" href="#collapse2" style="color:#000;">
-                <h3 class="panel-title">
-                    <i class="fa fa-home fa-lg" aria-hidden="true"></i> Етаж: <b>1</b>  Апартамент: <b>2</b></a>
-                    <div class="pull-right"><p class="text-right">
-                        <a href="#" data-toggle="modal" data-target="#editApp" style="color:#000;">Редактирай</a>
-                    </div>
-                </h3>
-              </div>
-              <div id="collapse2" class="panel-collapse collapse">
-
-                <div class = "panel-body">
-
-                </div>
-
-                <div class="panel-footer">
-                  <h4>Такса: <b>20</b> лв.</h4>
-                </div>
-              </div>
-            </div>
         </div>
-        <!-- app zakusnql END -->
-
-        <!-- app dlujnik -->
-        <div class="col-md-4">
-            <div class = "panel panel-danger">
-              <div class = "panel-heading">
-                <a data-toggle="collapse" href="#collapse3" style="color:#000;">
-                <h3 class="panel-title">
-                    <i class="fa fa-home fa-lg" aria-hidden="true"></i> Етаж: <b>1</b>  Апартамент: <b>2</b></a>
-                    <div class="pull-right"><p class="text-right">
-                        <a href="#" data-toggle="modal" data-target="#editApp" style="color:#000;">Редактирай</a>
-                    </div>
-                </h3>
-              </div>
-              <div id="collapse3" class="panel-collapse collapse">
-
-                <div class = "panel-body">
-
-                </div>
-
-                <div class="panel-footer">
-                  <h4>Такса: <b>20</b> лв.</h4>
-                </div>
-              </div>
-            </div>
-        </div>
-        <!-- app zakusnql END -->
+        <!-- etaj END -->
 
 
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
