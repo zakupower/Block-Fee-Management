@@ -15,7 +15,7 @@
 
 <body>
 Unique ID:
-<form  method="post" name="myform" action="phpDatabase.php">
+<form  method="post" name="myform" action="prototype 1.php">
     <input id="uni" type="text" name="mytext" maxlength="80" size="30">
     <input type="submit" value="Submit" >
 </form>
