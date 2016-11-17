@@ -1,4 +1,9 @@
 <?php
+//
+//Functions: encode , searchIfExist
+//Description: generira unikalen nomer
+//
+
 class Encoder
 {
     public $conn = null;
