@@ -1,0 +1,69 @@
+.hi-icon-effect .hi-icon {color: #f1c40f;}
+ul.social-links li a:hover { color: #f1c40f }
+.search-active i {color: #f1c40f;}
+.menu li a:hover {color:#f1c40f !important;  border-color:#f1c40f;}
+.menu li.current a {color: #f1c40f;}
+.menu li:hover a {color: #f1c40f}
+.menu ul li ul {  border-top:1px solid #f1c40f;}
+.menu ul li ul li a:hover { color:#f1c40f !important}
+.center-line {background: #f1c40f;}
+.hi-icon-effect .hi-icon:after {background: #f1c40f;}
+.grid figcaption {background: #f1c40f;}
+.portfolio-search {animation: yellowcss 1s linear 1s infinite alternate;-webkit-animation: yellowcss 1s linear 1s infinite alternate;-moz-animation:yellowcss 1s linear 1s infinite alternate;}
+@keyframes yellowcss{0%{border: 1px solid #fff;}100% {border: 1px solid #f1c40f ;}}
+@-webkit-keyframes yellowcss{0%{border: 1px solid #fff;}100% {border: 1px solid #f1c40f ;}}
+@-moz-keyframes yellowcss{0%{border: 1px solid #fff;}100% {border: 1px solid #f1c40f;}}
+.first-letter {background: #f1c40f;}
+.list-check li i {color: #f1c40f;}
+.blog-icon i {color: #f1c40f;}
+.view-fifth .mask {background: #f1c40f;}
+.jcarousel-control-prev, .jcarousel-control-next {color: #f1c40f;}
+.jcarousel-control-prev:hover, .jcarousel-control-next:hover {color: #f1c40f;}
+@media screen and (max-width: 991px) {
+.dl-menuwrapper button:hover, .dl-menuwrapper button.dl-active, .dl-menuwrapper ul {background: #f1c40f;}
+.menu ul ul {background: #f1c40f	;}
+.dl-menuwrapper button:after {background: #f1c40f;box-shadow: 0 10px 0 #f1c40f, 0 20px 0 #f1c40f;}
+.menu li.current a {color: #fff;}
+.no-touch .dl-menuwrapper li a:hover {color: #fff !important;}}
+.page-in-name span {color: #f1c40f;}
+.page-in-bread a {color: #f1c40f;}
+.progress-bar-info {background-color: #f1c40f;}
+.soc-about li a:hover{color:#f1c40f;}
+.fact-icon {color: #f1c40f;}
+.serv-marg i {color: #f1c40f;}
+.serv-icon i {color: #f1c40f;}
+.plan.featured h3 {color: #f1c40f;}
+.plan.featured .price {color: #f1c40f;}
+.btn-price {background-color: #f1c40f;border-color: #f1c40f;}
+.btn-price:hover {background-color: #fff;border-color: #f1c40f;color:#f1c40f;}
+.oops {color: #f1c40f;}
+.ac-container input:checked + label, .ac-container input:checked + label:hover {color: #f1c40f;}
+.ac-container label:hover { background: #f9f9f9; color:#f1c40f; }
+.cbp-l-filters-button .cbp-filter-item-active {background-color: #f1c40f;border-color: #f1c40f;}
+.cbp-l-filters-button .cbp-filter-counter:before {border-top: 4px solid #f1c40f;}
+.cbp-l-filters-button .cbp-filter-counter {background-color: #f1c40f;}
+.cbp-caption-zoom .cbp-caption-activeWrap {background-color: rgba(243, 198, 0,0.8);}
+.item-heart i {color: #f1c40f;}
+.btn-item:hover {color: #f1c40f;}
+.blog-category li i {color: #f1c40f;}
+.tags-blog li a:hover {color: #f1c40f;}
+.tweet_text a {color: #f1c40f;}
+.cl-blog-type {color: #f1c40f;}
+.cl-blog-name a:hover {color: #f1c40f;}
+.cl-blog-read a:hover {color: #f1c40f;}
+.pride_pg .current {color: #f1c40f;border: 1px solid #f1c40f;}
+.pride_pg a:hover {color: #f1c40f;border:1px solid #f1c40f;}
+.soc-blog li a:hover{color:#f1c40f;}
+.comm_name {color: #f1c40f;}
+.shortcode_tab_item_title:hover {color: #f1c40f;}
+.shortcode_tab_item_title.active {color: #f1c40f;}
+.tooltip_s {color: #f1c40f;}
+.index_4_prev:hover {border:1px solid #f1c40f;}
+.index_4_next:hover {border:1px solid #f1c40f;}
+
+
+
+
+
+
+

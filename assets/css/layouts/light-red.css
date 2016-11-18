@@ -1,0 +1,64 @@
+.hi-icon-effect .hi-icon {color: #FF675C;}
+ul.social-links li a:hover { color: #FF675C }
+.search-active i {color: #FF675C;}
+.menu li a:hover {color:#FF675C !important;  border-color:#FF675C;}
+.menu li.current a {color: #FF675C;}
+.menu li:hover a {color: #FF675C}
+.menu ul li ul {  border-top:1px solid #FF675C;}
+.menu ul li ul li a:hover { color:#FF675C !important}
+.center-line {background: #FF675C;}
+.hi-icon-effect .hi-icon:after {background: #FF675C;}
+.grid figcaption {background: #FF675C;}
+.portfolio-search {animation: lredcss 1s linear 1s infinite alternate;-webkit-animation: lredcss 1s linear 1s infinite alternate;-moz-animation:lredcss 1s linear 1s infinite alternate;}
+@keyframes lredcss{0%{border: 1px solid #fff;}100% {border: 1px solid #FF675C ;}}
+@-webkit-keyframes lredcss{0%{border: 1px solid #fff;}100% {border: 1px solid #FF675C ;}}
+@-moz-keyframes lredcss{0%{border: 1px solid #fff;}100% {border: 1px solid #FF675C;}}
+.first-letter {background: #FF675C;}
+.list-check li i {color: #FF675C;}
+.blog-icon i {color: #FF675C;}
+.view-fifth .mask {background: #FF675C;}
+.jcarousel-control-prev, .jcarousel-control-next {color: #FF675C;}
+.jcarousel-control-prev:hover, .jcarousel-control-next:hover {color: #FF675C;}
+@media screen and (max-width: 991px) {
+.dl-menuwrapper button:hover, .dl-menuwrapper button.dl-active, .dl-menuwrapper ul {background: #FF675C;}
+.menu ul ul {background: #FF675C	;}
+.dl-menuwrapper button:after {background: #FF675C;box-shadow: 0 10px 0 #FF675C, 0 20px 0 #FF675C;}
+.menu li.current a {color: #fff;}
+.no-touch .dl-menuwrapper li a:hover {color: #fff !important;}}
+.page-in-name span {color: #FF675C;}
+.page-in-bread a {color: #FF675C;}
+.progress-bar-info {background-color: #FF675C;}
+.soc-about li a:hover{color:#FF675C;}
+.fact-icon {color: #FF675C;}
+.serv-marg i {color: #FF675C;}
+.serv-icon i {color: #FF675C;}
+.plan.featured h3 {color: #FF675C;}
+.plan.featured .price {color: #FF675C;}
+.btn-price {background-color: #FF675C;border-color: #FF675C;}
+.btn-price:hover {background-color: #fff;border-color: #FF675C;color:#FF675C;}
+.oops {color: #FF675C;}
+.ac-container input:checked + label, .ac-container input:checked + label:hover {color: #FF675C;}
+.ac-container label:hover { background: #f9f9f9; color:#FF675C; }
+.cbp-l-filters-button .cbp-filter-item-active {background-color: #FF675C;border-color: #FF675C;}
+.cbp-l-filters-button .cbp-filter-counter:before {border-top: 4px solid #FF675C;}
+.cbp-l-filters-button .cbp-filter-counter {background-color: #FF675C;}
+.cbp-caption-zoom .cbp-caption-activeWrap {background-color: rgba(255, 102, 87,0.8);}
+.item-heart i {color: #FF675C;}
+.btn-item:hover {color: #FF675C;}
+.blog-category li i {color: #FF675C;}
+.tags-blog li a:hover {color: #FF675C;}
+.tweet_text a {color: #FF675C;}
+.cl-blog-type {color: #FF675C;}
+.cl-blog-name a:hover {color: #FF675C;}
+.cl-blog-read a:hover {color: #FF675C;}
+.pride_pg .current {color: #FF675C;border: 1px solid #FF675C;}
+.pride_pg a:hover {color: #FF675C;border:1px solid #FF675C;}
+.soc-blog li a:hover{color:#FF675C;}
+.comm_name {color: #FF675C;}
+.shortcode_tab_item_title:hover {color: #FF675C;}
+.shortcode_tab_item_title.active {color: #FF675C;}
+.tooltip_s {color: #FF675C;}
+.index_4_prev:hover {border:1px solid #FF675C;}
+.index_4_next:hover {border:1px solid #FF675C;}
+
+
