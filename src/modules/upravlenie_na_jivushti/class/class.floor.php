@@ -1,17 +1,19 @@
 <?php
 
+require_once "class.db.php";
 
 class floor
 {
     private $apps;
-    //todo
+    //todo NOT_FINISHED
 
-    public function setAppartments($a) {
-        $apps = $a;
-
+    public function setAppartments($a,$table) {
+        $database = new Database();
+        $database->query('INSERT INTO '.$table.' (etaj)');
+        $row = $database->resultset();
     }
-    public function getAppartments() {
-        return $apps;
+    public function findByID($id) {
+        return $id;
     }
 
 

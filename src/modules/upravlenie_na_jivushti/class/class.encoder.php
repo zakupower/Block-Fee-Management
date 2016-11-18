@@ -14,14 +14,14 @@ class Encoder
         $code = strtoupper(substr(md5($str),-6));
         return $code;
     }
-    public function searchIfExist($code) {
+    public function searchIfExist($code,$table) {
         $database = new Database();
-        $database->query('SELECT * FROM unique_ID');
+        $database->query('SELECT * FROM '.$table.'');
         $row = $database->resultset();
         //print_r($row);
 
         for ($i=0; $i < $database->rowCount(); $i++) {
-            if($row[$i]['unique_ID'] == $code) {
+            if($row[$i][$table] == $code) {
                 return true;
             }
         }
@@ -30,7 +30,7 @@ class Encoder
 
 /*
  $enc = new Encoder();
- if($enc->searchIfExist("334EC81")) {
+ if($enc->searchIfExist("334EC8","unique_ID")) {
      echo "exist";
  }
  else {
