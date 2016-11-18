@@ -4,6 +4,8 @@
 //Description: generira unikalen nomer
 //
 
+require_once "class.db.php";
+
 class Encoder
 {
     public $conn = null;
@@ -12,42 +14,27 @@ class Encoder
         $code = strtoupper(substr(md5($str),-6));
         return $code;
     }
-    public function searchIfExist($DB_HOSTNAME,$DB_DATABASE,$DB_USERNAME,$DB_PASSWORD,$code) {
-        try {
-            //db
-            $this->conn = new PDO("mysql:host=".$DB_HOSTNAME.";dbname=".$DB_DATABASE."",$DB_USERNAME,$DB_PASSWORD);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    public function searchIfExist($code) {
+        $database = new Database();
+        $database->query('SELECT * FROM unique_ID');
+        $row = $database->resultset();
+        //print_r($row);
 
-            //search query-to
-            $sql="SELECT * FROM `unique_ID` WHERE (`unique_ID` LIKE :code)";
-            $stmt = $this->conn->prepare($sql);
-            $stmt->bindparam(":code", $code);
-            $stmt->execute();
-            $result = $stmt->fetchAll();
-            $arr = array();
-            if(!empty($result)) {
-                foreach( $result as $row ) {
-                    $arr = $row['unique_ID'];
-                }
+        for ($i=0; $i < $database->rowCount(); $i++) {
+            if($row[$i]['unique_ID'] == $code) {
+                return true;
             }
-            if($arr == $code) {
-                return "Exist";
-            }
-            else {
-                return $code;
-            }
-
-
-        }
-        catch (PDOException $e) {
-            return $e->getMessage();
         }
     }
 }
 
-
-$encoder = new Encoder();
-$code = $encoder->encode("0107");
-echo $encoder->searchIfExist("localhost","apps","root","",$code);
-
+/*
+ $enc = new Encoder();
+ if($enc->searchIfExist("334EC81")) {
+     echo "exist";
+ }
+ else {
+     echo "not exist";
+ }
+*/
 ?>
