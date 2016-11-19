@@ -18,12 +18,12 @@ if(is_numeric($memberID) && !empty($active)){
 	//if the row was updated redirect the user
 	if($stmt->rowCount() == 1){
 
-		//redirect to login page
+		// редирект към логин
 		header('Location: login.php?action=active');
 		exit;
 
 	} else {
-		echo "Your account could not be activated."; 
+		echo "Домоуправителят не можеше да бъде активиран."; 
 	}
 	
 }
