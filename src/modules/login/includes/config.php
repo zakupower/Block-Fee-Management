@@ -7,9 +7,9 @@ date_default_timezone_set('Europe/Sofia');
 
 //database credentials
 define('DBHOST','localhost');
-define('DBUSER','c16_mysql');
-define('DBPASS','#l337');
-define('DBNAME','c16_db');
+define('DBUSER','test');
+define('DBPASS','testtest');
+define('DBNAME','test_db');
 
 //application address
 define('DIR','http://block.selendis.pw/');
