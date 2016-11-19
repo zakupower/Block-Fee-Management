@@ -18,6 +18,7 @@
   <body>
       <div class="container">
       <hr />
+      <a href="index.php">Начало </a> |
       <a href="profile.php">Профил</a> |
       <a href="add_entrance.php">Добави Вход</a> |
       <a href="add_apartment.php">Добави Апартамент</a>
@@ -27,22 +28,20 @@
     <table class="table table-striped custab">
     <thead>
         <tr>
-            <th>#</th>
+            <th>Блок №</th>
             <th>Вход</th>
             <th>Етажи</th>
             <th>Апартаменти</th>
             <th>Адрес</th>
-            <th>Блок №</th>
             <th></th>
         </tr>
     </thead>
         <tr>
-            <td>1</td>
+            <td>32</td>
             <td><a href="entrance.php">A</a></td>
             <td>12</td>
             <td>36</td>
             <td>ул Хаджи Димитър 32</td>
-            <td>32</td>
             <td><a href="edit.php">Редактирай</a></td>
         </tr>
     </table>

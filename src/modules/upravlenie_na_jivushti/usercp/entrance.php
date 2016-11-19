@@ -18,18 +18,18 @@
   <body>
       <div class="container">
       <hr />
+      <a href="index.php">Начало </a> |
       <a href="profile.php">Профил</a> |
       <a href="add_entrance.php">Добави Вход</a> |
       <a href="add_apartment.php">Добави Апартамент</a>
       <hr />
-      <a href="index.php">Обратно</a>
+      <a href="index/">Обратно</a>
       <hr />
       <div class="container">
     <div class="row col-md-12 custyle">
     <table class="table table-striped custab">
     <thead>
         <tr>
-            <th>#</th>
             <th>Име</th>
             <th>Етаж</th>
             <th>Апартамент</th>
@@ -38,7 +38,6 @@
         </tr>
     </thead>
         <tr>
-            <td>1</td>
             <td><a href="apartments.php">сем. Иванови</a></td>
             <td>3</td>
             <td>1</td>
