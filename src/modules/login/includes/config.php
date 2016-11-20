@@ -1,8 +1,9 @@
 <?php
 ob_start();
 session_start();
-
-// админнистратора който ще одобрява всичко домоуправители
+// Конфигурация
+//
+// електронна поща на администратора който ще одобрява всички домоуправители
 $adminEmail = "mmdollar@gmail.com";
 
 // да си сложим и нашата времева зона :)
@@ -10,9 +11,9 @@ date_default_timezone_set('Europe/Sofia');
 
 //database credentials
 define('DBHOST','localhost');
-define('DBUSER','test');
-define('DBPASS','testtest');
-define('DBNAME','test_db');
+define('DBUSER','митака');
+define('DBPASS','цепи');
+define('DBNAME','математика');
 
 // адреси на системата
 define('DIR','http://block.selendis.pw/');
