@@ -21,23 +21,7 @@
       <hr />
       <a href="index.php">Начало </a> |
       <a href="profile.php">Профил</a> |
-      <a href="add_entrance.php">Добави Вход</a> |
-      <a href="add_apartment.php">Добави Апартамент</a> |  Дата: <b>
-      <script>
-      var today = new Date();
-      var dd = today.getDate();
-      var mm = today.getMonth()+1;
-      var yyyy = today.getFullYear();
-      if(dd<10) {
-          dd='0'+dd
-      }
-
-      if(mm<10) {
-        mm='0'+mm
-      }
-      var today = mm+'/'+dd+'/'+yyyy;
-      document.write(today);
-      </script>
+      <a href="add_apartment.php">Добави Апартамент</a>
       </b>
       <hr />
       <a href="entrance.php">Обратно</a>

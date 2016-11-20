@@ -20,8 +20,7 @@
       <hr />
       <a href="index.php">Начало </a> |
       <a href="profile.php">Профил</a> |
-      <a href="add_entrance.php">Добави Вход</a> |
-      <a href="add_apartment.php">Добави Апартамент</a>
+      <a href="add_entrance.php">Добави Вход</a> 
       <hr />
       <div class="container">
     <div class="row col-md-12 custyle">

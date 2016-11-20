@@ -18,30 +18,46 @@
   <body>
       <div class="container">
       <hr />
+      <div>
       <a href="index.php">Начало </a> |
       <a href="profile.php">Профил</a> |
-      <a href="add_entrance.php">Добави Вход</a> |
-      <a href="add_apartment.php">Добави Апартамент</a>
+      <a href="add_apartment.php">Добави Обект</a> |
+      <a href="add_apartment.php">Добави Приход</a> |
+      <a href="add_apartment.php">Добави Разход</a>
+
+      <div class="pull-right">
+         Обект:<b> Блок №32 Вход: A </b>
+      </div>
+      </div>
+      <div class="clearfix">
+      </div>
+
       <hr />
-      <a href="index/">Обратно</a>
+
+      <p> Приходи: <b>1200</b> Разходи: <b>1300</b> Салдо: <b>-100</b> </p>
       <hr />
       <div class="container">
     <div class="row col-md-12 custyle">
+
     <table class="table table-striped custab">
     <thead>
         <tr>
             <th>Име</th>
             <th>Етаж</th>
-            <th>Апартамент</th>
-            <th>Живущи</th>
+            <th>Тип</th>
             <th></th>
         </tr>
     </thead>
         <tr>
-            <td><a href="apartments.php">сем. Иванови</a></td>
+            <td><a href="apartments.php">ап. 10002</a></td>
             <td>3</td>
-            <td>1</td>
-            <td>3</td>
+            <td>Апартамент</td>
+            <td><a href="edit.php">Редактирай</a></td>
+        </tr>
+        <tr>
+            <td><a href="apartments.php">ап. 10002</a></td>
+            <td>-1</td>
+            <td>Гараж</td>
             <td><a href="edit.php">Редактирай</a></td>
         </tr>
     </table>
