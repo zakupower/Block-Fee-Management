@@ -1,12 +1,12 @@
 <?php require('includes/config.php');
 
-//if logged in redirect to members page
+// ако е логнат да бяга към друга страница :D
 if( $user->is_logged_in() ){ header('Location: memberpage.php'); }
 
-//if form has been submitted process it
+// ако формата е пусната
 if(isset($_POST['submit'])){
 
-	//very basic validation
+	// валидиране на данните
 	if(strlen($_POST['username']) < 3){
 		$error[] = 'Името е твърде късо.';
 	} else {
