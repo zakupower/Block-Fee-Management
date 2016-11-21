@@ -1,12 +1,12 @@
 <?php require('includes/config.php'); 
 
-//if not logged in redirect to login page
+// ако не е логнат да си ходи към логин-а :)
 if(!$user->is_logged_in()){ header('Location: login.php'); } 
 
-//define page title
+// Титла
 $title = 'Block-Management: Меню';
 
-//include header template
+// хийдър
 require('layout/header.php'); 
 ?>
 
@@ -27,6 +27,6 @@ require('layout/header.php');
 </div>
 
 <?php 
-//include header template
+// футър
 require('layout/footer.php'); 
 ?>
