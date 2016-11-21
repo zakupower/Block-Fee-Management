@@ -9,7 +9,7 @@ $adminEmail = "mmdollar@gmail.com";
 // да си сложим и нашата времева зона :)
 date_default_timezone_set('Europe/Sofia');
 
-//database credentials
+// База данни
 define('DBHOST','localhost');
 define('DBUSER','митака');
 define('DBPASS','цепи');
@@ -18,6 +18,8 @@ define('DBNAME','математика');
 // адреси на системата
 define('DIR','http://block.selendis.pw/');
 define('SITEEMAIL','no-reply@block.selendis.pw');
+
+// Край на конфигурацията
 
 try {
 
