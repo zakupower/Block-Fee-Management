@@ -1,11 +1,11 @@
 <?php
-//include config
-require_once('includes/config.php');
+// включване на конфиг файла
+require_once('inc/config.php');
 
-//check if already logged in move to home page
+// проверка дали е сте логнат и да го прехвърли на друга страница
 if( $user->is_logged_in() ){ header('Location: index.php'); } 
 
-//process login form if submitted
+// ако формата е изпратена да се изпълни
 if(isset($_POST['submit'])){
 
 	$username = $_POST['username'];
@@ -20,20 +20,18 @@ if(isset($_POST['submit'])){
 		$error[] = 'Грешно име/парола или не сте одобрен от администратора.';
 	}
 
-}//end if submit
+}// край на събмит формата
 
-//define page title
+// Титла на страницата
 $title = 'Block-Management: Вход';
 
-//include header template
-require('layout/header.php'); 
+// включване нa хийдъра
+require('inc/header.php'); 
 ?>
 
 	
 <div class="container">
-
 	<div class="row">
-
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" method="post" action="" autocomplete="off">
 				<h2>Домоуправителски вход</h2>
@@ -41,7 +39,7 @@ require('layout/header.php');
 				<hr>
 
 				<?php
-				//check for any errors
+				// проверка за грешки
 				if(isset($error)){
 					foreach($error as $error){
 						echo '<p class="bg-danger">'.$error.'</p>';
@@ -50,7 +48,7 @@ require('layout/header.php');
 
 				if(isset($_GET['action'])){
 
-					//check the action
+					// проверка още :D
 					switch ($_GET['action']) {
 						case 'active':
 							echo "<h2 class='bg-success'>Your account is now active you may now log in.</h2>";
@@ -64,10 +62,7 @@ require('layout/header.php');
 					}
 
 				}
-
-				
 				?>
-
 				<div class="form-group">
 					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="Име" value="<?php if(isset($error)){ echo $_POST['username']; } ?>" tabindex="1">
 				</div>
@@ -80,8 +75,7 @@ require('layout/header.php');
 					<div class="col-xs-9 col-sm-9 col-md-9">
 						 <a href='reset.php'>Забравена парола</a>
 					</div>
-				</div>
-				
+				</div>				
 				<hr>
 				<div class="row">
 					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Вход" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
@@ -89,13 +83,9 @@ require('layout/header.php');
 			</form>
 		</div>
 	</div>
-
-
-
 </div>
 
-
 <?php 
-//include header template
-require('layout/footer.php'); 
+// включване нa футъра :D
+require('inc/footer.php'); 
 ?>

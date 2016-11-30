@@ -1,29 +1,29 @@
 <?php
-require('includes/config.php');
+require('inc/config.php');
 
-//collect values from the url
+// извличане на информация от страницата
 $memberID = trim($_GET['x']);
 $active = trim($_GET['y']);
 
-//if id is number and the active token is not empty carry on
+// ако ид-то е номер и активният токен не е празен да продължи
 if(is_numeric($memberID) && !empty($active)){
 
-	//update users record set the active column to Yes where the memberID and active value match the ones provided in the array
+	// да упдейтне потребителският запис и да сложи да на memberID
 	$stmt = $db->prepare("UPDATE members SET active = 'Yes' WHERE memberID = :memberID AND active = :active");
 	$stmt->execute(array(
 		':memberID' => $memberID,
 		':active' => $active
 	));
 
-	//if the row was updated redirect the user
+	// ако редицата е упдейтната да редиректне потребителят
 	if($stmt->rowCount() == 1){
 
-		// редирект към логин
+		// редирект към логин страницата
 		header('Location: login.php?action=active');
 		exit;
 
 	} else {
-		echo "Домоуправителят не можеше да бъде активиран."; 
+		echo "Потребителят Ви не можеше да бъде активиран."; 
 	}
 	
 }

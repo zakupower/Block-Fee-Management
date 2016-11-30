@@ -1,9 +1,7 @@
-<?php require('includes/config.php');
-
-//logout
+<?php require('inc/config.php');
+// логайут
 $user->logout(); 
-
-//logged in return to index page
+// ако е логнат да се прехвърли
 header('Location: index.php');
 exit;
 ?>

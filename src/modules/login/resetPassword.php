@@ -1,39 +1,39 @@
-<?php require('includes/config.php'); 
+<?php require('inc/config.php'); 
 
-//if logged in redirect to members page
+// проверка дали е сте логнат и да го прехвърли на друга страница
 if( $user->is_logged_in() ){ header('Location: memberpage.php'); } 
 
 $stmt = $db->prepare('SELECT resetToken, resetComplete FROM members WHERE resetToken = :token');
 $stmt->execute(array(':token' => $_GET['key']));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-//if no token from db then kill the page
+// ако няма токен от базата данни да убие страницата
 if(empty($row['resetToken'])){
 	$stop = 'Invalid token provided, please use the link provided in the reset email.';
 } elseif($row['resetComplete'] == 'Yes') {
-	$stop = 'Паролата Ви е вече сменена!';
+	$stop = 'Your password has already been changed!';
 }
 
-//if form has been submitted process it
+// ако формата е изпратена да се изпълни
 if(isset($_POST['submit'])){
 
-	//basic validation
+	// проста валидация
 	if(strlen($_POST['password']) < 3){
-		$error[] = 'Паролата е твърде къса.';
+		$error[] = 'Password is too short.';
 	}
 
 	if(strlen($_POST['passwordConfirm']) < 3){
-		$error[] = 'Потвърждаващата парола е твърде къса.';
+		$error[] = 'Confirm password is too short.';
 	}
 
 	if($_POST['password'] != $_POST['passwordConfirm']){
-		$error[] = 'Паролите не съвпадат.';
+		$error[] = 'Passwords do not match.';
 	}
 
-	//if no errors have been created carry on
+	// ако няма грешки да продължи
 	if(!isset($error)){
 
-		//hash the password
+		// hash на паролата
 		$hashedpassword = $user->password_hash($_POST['password'], PASSWORD_BCRYPT);
 
 		try {
@@ -44,11 +44,11 @@ if(isset($_POST['submit'])){
 				':token' => $row['resetToken']
 			));
 
-			//redirect to index page
+			// редирект към индекс страницата
 			header('Location: login.php?action=resetAccount');
 			exit;
 
-		//else catch the exception and show the error.
+		// ако има грешки да ги покаже
 		} catch(PDOException $e) {
 		    $error[] = $e->getMessage();
 		}
@@ -57,17 +57,15 @@ if(isset($_POST['submit'])){
 
 }
 
-//define page title
+// Титла на страницата
 $title = 'Reset Account';
 
-//include header template
-require('layout/header.php'); 
+// включване нa хийдъра
+require('inc/header.php'); 
 ?>
 
 <div class="container">
-
 	<div class="row">
-
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 
 
@@ -82,17 +80,17 @@ require('layout/header.php');
 					<hr>
 
 					<?php
-					//check for any errors
+					// проверка за грешки
 					if(isset($error)){
 						foreach($error as $error){
 							echo '<p class="bg-danger">'.$error.'</p>';
 						}
 					}
 
-					//check the action
+					// проверка на изпратените данни
 					switch ($_GET['action']) {
 						case 'active':
-							echo "<h2 class='bg-success'>Your account is now active you may now log in.</h2>";
+							echo "<h2 class='bg-success'>Домоуправителският акаунт е активен, вече може да влиза в системата.</h2>";
 							break;
 						case 'reset':
 							echo "<h2 class='bg-success'>Please check your inbox for a reset link.</h2>";
@@ -122,11 +120,9 @@ require('layout/header.php');
 			<?php } ?>
 		</div>
 	</div>
-
-
 </div>
 
 <?php 
-//include header template
-require('layout/footer.php'); 
+// включване нa футъра :D
+require('inc/footer.php'); 
 ?>

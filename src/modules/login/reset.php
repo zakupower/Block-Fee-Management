@@ -1,12 +1,12 @@
-<?php require('includes/config.php');
+<?php require('inc/config.php');
 
-//if logged in redirect to members page
+// проверка дали е сте логнат и да го прехвърли на друга страница
 if( $user->is_logged_in() ){ header('Location: memberpage.php'); }
 
-//if form has been submitted process it
+// ако формата е изпратена да се изпълни
 if(isset($_POST['submit'])){
 
-	//email validation
+	// e-mail валидация
 	if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 	    $error[] = 'Моля въведете валидна електронна поща';
 	} else {
@@ -15,15 +15,14 @@ if(isset($_POST['submit'])){
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		if(empty($row['email'])){
-			$error[] = 'Въведената електронна поща не е разпозната.';
+			$error[] = 'Email provided is not on recognised.';
 		}
 
 	}
-
-	//if no errors have been created carry on
+	// ако няма грешки да продължи
 	if(!isset($error)){
 
-		//create the activasion code
+		// създаване на активационният код
 		$token = md5(uniqid(rand(),true));
 
 		try {
@@ -34,12 +33,12 @@ if(isset($_POST['submit'])){
 				':token' => $token
 			));
 
-			//send email
+			// изпращане на e-mail
 			$to = $row['email'];
-			$subject = "Рестартирване на парола";
-			$body = "<p>Someone requested that the password be reset.</p>
-			<p>If this was a mistake, just ignore this email and nothing will happen.</p>
-			<p>To reset your password, visit the following address: <a href='".DIR."resetPassword.php?key=$token'>".DIR."resetPassword.php?key=$token</a></p>";
+			$subject = "Смяна на парола";
+			$body = "<p>Някой е поискал смяна на паролата на домоуправител.</p>
+			<p>Ако това е грешка може игнорирайте тази поща и нищо няма да се случи.</p>
+			<p>За да смените паролата моля посетете следният адрес: <a href='".DIR."resetPassword.php?key=$token'>".DIR."resetPassword.php?key=$token</a></p>";
 
 			$mail = new Mail();
 			$mail->setFrom(SITEEMAIL);
@@ -47,12 +46,11 @@ if(isset($_POST['submit'])){
 			$mail->subject($subject);
 			$mail->body($body);
 			$mail->send();
-
-			//redirect to index page
+			// редирект към индекс страницата
 			header('Location: login.php?action=reset');
 			exit;
 
-		//else catch the exception and show the error.
+		// ако има грешки да ги покаже
 		} catch(PDOException $e) {
 		    $error[] = $e->getMessage();
 		}
@@ -61,25 +59,23 @@ if(isset($_POST['submit'])){
 
 }
 
-//define page title
-$title = 'Block-Management: Рестартирване на парола';
+// Титла на страницата
+$title = 'Block-Management: Смяна на парола';
 
-//include header template
-require('layout/header.php');
+// включване нa хийдъра
+require('inc/header.php');
 ?>
 
 <div class="container">
-
 	<div class="row">
-
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" method="post" action="" autocomplete="off">
-				<h2>Рестартирване на парола</h2>
-				<p><a href='login.php'>Обратно към входа</a></p>
+				<h2>Reset Password</h2>
+				<p><a href='login.php'>Back to login page</a></p>
 				<hr>
 
 				<?php
-				//check for any errors
+				// проверка за грешки
 				if(isset($error)){
 					foreach($error as $error){
 						echo '<p class="bg-danger">'.$error.'</p>';
@@ -87,8 +83,7 @@ require('layout/header.php');
 				}
 
 				if(isset($_GET['action'])){
-
-					//check the action
+					// проверка на изпратените данни
 					switch ($_GET['action']) {
 						case 'active':
 							echo "<h2 class='bg-success'>Your account is now active you may now log in.</h2>";
@@ -101,21 +96,18 @@ require('layout/header.php');
 				?>
 
 				<div class="form-group">
-					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Електронна поща" value="" tabindex="1">
+					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email" value="" tabindex="1">
 				</div>
-
 				<hr>
 				<div class="row">
-					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Изпрати" class="btn btn-primary btn-block btn-lg" tabindex="2"></div>
+					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Sent Reset Link" class="btn btn-primary btn-block btn-lg" tabindex="2"></div>
 				</div>
 			</form>
 		</div>
 	</div>
-
-
 </div>
 
 <?php
-//include header template
-require('layout/footer.php');
+// включване нa футъра :D
+require('inc/footer.php');
 ?>

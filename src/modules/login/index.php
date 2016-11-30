@@ -1,12 +1,12 @@
-<?php require('includes/config.php');
+<?php require('inc/config.php');
 
-// ако е логнат да бяга към друга страница :D
+// ако потребителят е логнат да бъде прехвърлен на друга страница
 if( $user->is_logged_in() ){ header('Location: memberpage.php'); }
 
-// ако формата е пусната
+// ако формата е изпратена да се изпълни
 if(isset($_POST['submit'])){
 
-	// валидиране на данните
+	// много проста форма на валидация
 	if(strlen($_POST['username']) < 3){
 		$error[] = 'Името е твърде късо.';
 	} else {
@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
 		$error[] = 'Въведените пароли не съвпадат.';
 	}
 
-	//email validation
+	// e-mail валидиране
 	if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 	    $error[] = 'Моля въведете валидна електронна поща';
 	} else {
