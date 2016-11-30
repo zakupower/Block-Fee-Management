@@ -1,5 +1,4 @@
 <?php require('inc/config.php');
-
 // ако потребителят е логнат да бъде прехвърлен на друга страница
 if( $user->is_logged_in() ){ header('Location: memberpage.php'); }
 
@@ -47,18 +46,18 @@ if(isset($_POST['submit'])){
 	}
 
 
-	//if no errors have been created carry on
+	// ако няма грешки да продължи
 	if(!isset($error)){
 
-		//hash the password
+		// hash на паролата
 		$hashedpassword = $user->password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-		//create the activasion code
+		// създаване на активационният код
 		$activasion = md5(uniqid(rand(),true));
 
 		try {
 
-			//insert into database with a prepared statement
+			// изпращане към базата данни
 			$stmt = $db->prepare('INSERT INTO members (username,password,email,active) VALUES (:username, :password, :email, :active)');
 			$stmt->execute(array(
 				':username' => $_POST['username'],
@@ -68,7 +67,7 @@ if(isset($_POST['submit'])){
 			));
 			$id = $db->lastInsertId('memberID');
 
-			//send email
+			// изпращане на електронна поща
 			$to = $_POST['email'];
 			$subject = "Нов домоуправител";
 			$body = "<p>В системата се регистрира нов домоуправител с име: ." .$_POST['username']."</p>
@@ -83,7 +82,7 @@ if(isset($_POST['submit'])){
 			$mail->body($body);
 			$mail->send();
 
-			//redirect to index page
+			// редирект към логин страницата
 			header('Location: index.php?action=joined');
 			exit;
 
@@ -91,23 +90,19 @@ if(isset($_POST['submit'])){
 		} catch(PDOException $e) {
 		    $error[] = $e->getMessage();
 		}
-
 	}
-
 }
 
-//define page title
+// Титла на страницата
 $title = 'Block-Management';
 
-//include header template
-require('layout/header.php');
+// включване нa хийдъра
+require('inc/header.php');
 ?>
 
 
 <div class="container">
-
 	<div class="row">
-
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" method="post" action="" autocomplete="off">
 				<h2>Регистрация за домоуправител</h2>
@@ -146,17 +141,15 @@ require('layout/header.php');
 						</div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Регистрирай ме" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
 				</div>
 			</form>
 		</div>
 	</div>
-
 </div>
 
 <?php
-//include header template
-require('layout/footer.php');
+// включване нa футъра :D
+require('inc/footer.php');
 ?>
