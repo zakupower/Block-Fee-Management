@@ -1,0 +1,86 @@
+.bg-arches{
+background: #fff url(img/arches.png) fixed !important;
+}
+
+.bg-blu_stripes{
+background: #fff url(img/blu_stripes.png) fixed !important;
+}
+
+.bg-city{
+background-image: url(img/city.jpg);
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+background-repeat: no-repeat no-repeat;
+}
+
+.bg-fabric_plaid{
+background: #fff url(img/fabric_plaid.png) fixed !important;
+}
+
+.bg-greece{background-image: url(img/greece.jpeg);
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+background-repeat: no-repeat no-repeat;
+}
+
+.bg-random_grey_variations{
+background: #fff url(img/random_grey_variations.png) fixed !important;
+}
+
+.bg-batthern{
+background: #fff url(img/batthern.png) fixed !important;
+}
+
+.bg-build{background-image: url(img/build.jpg);
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+background-repeat: no-repeat no-repeat;}
+
+.bg-diagonal-noise{
+background: #fff url(img/diagonal-noise.png) fixed !important;
+}
+
+.bg-first_aid_kit{
+background: #fff url(img/first_aid_kit.png) fixed !important;
+}
+
+.bg-kolos{background-image: url(img/kolos.jpg);
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+background-repeat: no-repeat no-repeat;}
+
+.bg-vostok{background-image: url(img/vostok.jpg);
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+background-repeat: no-repeat no-repeat;}
+
+.bg-always_grey{
+background: #fff url(img/always_grey.png) fixed !important;
+}
+
+.bg-bgnoise_lg{
+background: #fff url(img/bgnoise_lg.png) fixed !important;
+}
+
+.bg-checkered_pattern{
+background: #fff url(img/checkered_pattern.png) fixed !important;
+}
+
+.bg-diamond_upholstery{
+background: #fff url(img/diamond_upholstery.png) fixed !important;
+}
+
+.bg-goriz{background-image: url(img/goriz.jpg);
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+background-repeat: no-repeat no-repeat;}
+
+.bg-px_by_Gre3g{
+background: #fff url(img/px_by_Gre3g.png) fixed !important;
+}

@@ -1,0 +1,8 @@
+.bg-danger, .bg-success {
+	padding: 0 5px;
+}
+
+a {
+	color: grey;
+	text-decoration: none;
+}

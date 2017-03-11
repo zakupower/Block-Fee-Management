@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="floor_interface.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    $('#myTooltip').tooltip();
+    </script>
+  </head>
+  <body>
+      <!-- Modal za app_search-->
+      <div id="searchApp" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Търси апартамент.</h4>
+            </div>
+            <!-- Body of content in the modal-->
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Етаж:</label>
+                <select class="form-control" id="app_etaj">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Апартамент:</label>
+                <select class="form-control" id="app_number">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Уникален Номер:</label>
+                <input class="form-control" id="app_unique_id">
+              </div>
+
+               <!-- END Body of content in the modal-->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Търси</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+            </div>
+          </div>
+        </div>
+      </div>
+       <!-- Modal za app_search END-->
+
+       <!-- Modal za statistika-->
+       <div id="statistic" class="modal fade" role="dialog">
+         <div class="modal-dialog">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Статистика</h4>
+           </div>
+             <!-- Body of content in the modal-->
+             <div class="modal-body">
+
+
+                <!-- END Body of content in the modal-->
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+             </div>
+           </div>
+         </div>
+       </div>
+        <!-- Modal za statistika END-->
+    <!-- Modal za app_add-->
+    <div id="addApp" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Добави апартамент.</h4>
+          </div>
+          <!-- Body of content in the modal-->
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Етаж:</label>
+              <select class="form-control" id="app_etaj">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Апартамент:</label>
+              <select class="form-control" id="app_etaj">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Хора:</label>
+              <input type="number" class="form-control" id="app_number_people">
+            </div>
+            <div class="form-group">
+              <label>Начална дата на ползване на апартамента:</label>
+              <input type="date" class="form-control" id="app_date">
+            </div>
+            <div class="form-group">
+              <label>Допълнителна информация</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+             <!-- END Body of content in the modal-->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Запази</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal za app_edit-->
+    <div id="editApp" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Редактирай апартамент.</h4>
+          </div>
+          <!-- Body of content in the modal-->
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Етаж:</label>
+              <select class="form-control" id="app_etaj">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Апартамент:</label>
+              <select class="form-control" id="app_etaj">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Хора:</label>
+              <input type="number" class="form-control" id="app_number_people">
+            </div>
+            <div class="form-group">
+              <label>Начална дата на ползване на апартамента:</label>
+              <input type="date" class="form-control" id="app_date">
+            </div>
+            <div class="form-group">
+              <label>Допълнителна информация</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+             <!-- END Body of content in the modal-->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Запази</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Изтрий</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal za etaj_edit-->
+    <div id="edit_etaj_1" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Редактирай етаж.</h4>
+          </div>
+          <!-- Body of content in the modal-->
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Апартаменти:</label>
+              <input type="number" class="form-control" id="etaj_number_apps">
+            </div>
+            <div class="form-group">
+              <label>Допълнителна информация</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+             <!-- END Body of content in the modal-->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Запази</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Изтрий</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- END modal za app_edit-->
+
+    <div class="container">
+        <h2>Справки на апартаменти и етажи</h2>
+        <hr>
+        <div class="row">
+
+
+            <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                
+                <i data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom" class="fa fa-plus fa-lg"  aria-hidden="true"></i>
+            </div>
+            <i data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom" class="fa fa-search fa-lg" aria-hidden="true"></i>
+
+        </div>
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
